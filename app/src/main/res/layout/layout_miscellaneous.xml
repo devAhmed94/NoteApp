@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/layout_miscellaneous"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/backgroud_miscellaneous"
+    android:orientation="vertical"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    app:behavior_peekHeight="@dimen/_40sdp"
+    android:paddingBottom="@dimen/_10sdp"
+    >
+    <TextView
+        android:id="@+id/txt_miscellaneous"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:text="@string/miscellaneous"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/ubuntu_bold"
+        android:includeFontPadding="false"
+        android:textSize="@dimen/_13ssp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+
+        >
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+            <View
+                android:id="@+id/viewColor1"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/background_note_color"
+                />
+            <ImageView
+                android:id="@+id/imageColor1"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/ic_done"
+                android:padding="@dimen/_8sdp"
+                app:tint="@color/white" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+            <View
+                android:id="@+id/viewColor2"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/background_note_color2"
+                />
+            <ImageView
+                android:id="@+id/imageColor2"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="@dimen/_8sdp"
+                app:tint="@color/white" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+            <View
+                android:id="@+id/viewColor3"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/background_note_color3"
+                />
+            <ImageView
+                android:id="@+id/imageColor3"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+
+                android:padding="@dimen/_8sdp"
+                app:tint="@color/white" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+            <View
+                android:id="@+id/viewColor4"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/background_note_color4"
+                />
+            <ImageView
+                android:id="@+id/imageColor4"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+
+                android:padding="@dimen/_8sdp"
+                app:tint="@color/white" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+            <View
+                android:id="@+id/viewColor5"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/background_note_color5"
+                />
+            <ImageView
+                android:id="@+id/imageColor5"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+
+                android:padding="@dimen/_8sdp"
+                app:tint="@color/white" />
+        </FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pick_color"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textColor="@color/white"
+            android:layout_marginEnd="@dimen/_10sdp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+       android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_image"
+            app:tint="@color/white" />
+        <TextView
+            android:id="@+id/txt_add_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:text="@string/add_image"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_add_url"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_web_link"
+            app:tint="@color/white" />
+        <TextView
+            android:id="@+id/txt_add_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:text="@string/add_url"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_delete"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_delete_24"
+            app:tint="@color/colorDelete" />
+        <TextView
+            android:id="@+id/txt_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:text="@string/delete_note"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textColor="@color/colorDelete"
+            android:textSize="@dimen/_13ssp"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

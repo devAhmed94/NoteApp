@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/layout_item_note"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/background_item_recycler_shape"
+    android:layout_marginTop="@dimen/_12sdp"
+    android:layout_marginStart="@dimen/_12sdp"
+    android:layout_marginEnd="@dimen/_12sdp"
+    android:padding="@dimen/_3sdp"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/roundImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:riv_corner_radius_top_left="@dimen/_10sdp"
+        app:riv_corner_radius_top_right="@dimen/_10sdp"
+        android:adjustViewBounds="true"
+        android:visibility="gone"
+        />
+    <TextView
+        android:id="@+id/item_note_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorSubTitleText"
+        android:fontFamily="@font/ubuntu_bold"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:includeFontPadding="false"
+        android:textSize="@dimen/_13ssp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        />
+    <TextView
+        android:id="@+id/item_note_sub_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorSubTitleText"
+        android:fontFamily="@font/ubuntu_medium"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:includeFontPadding="false"
+        android:textSize="@dimen/_11ssp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        />
+    <TextView
+        android:id="@+id/item_txt_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorSubTitleText"
+        android:fontFamily="@font/ubuntu_regular"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:includeFontPadding="false"
+        android:textSize="@dimen/_8ssp"
+
+        />
+
+
+</LinearLayout>

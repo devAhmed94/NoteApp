@@ -18,6 +18,7 @@ import java.util.List;
 
 import io.reactivex.CompletableObserver;
 import io.reactivex.SingleObserver;
+import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
 import io.reactivex.schedulers.Schedulers;
@@ -25,6 +26,7 @@ import io.reactivex.schedulers.Schedulers;
 public class NoteViewModel extends AndroidViewModel {
     public MutableLiveData<List<NoteEntities>> liveDataNode;
     public NoteDao noteDao;
+    CompositeDisposable disposable = new CompositeDisposable();
 
     public NoteViewModel(@NonNull Application application) {
         super(application);
@@ -40,7 +42,7 @@ public class NoteViewModel extends AndroidViewModel {
                 .subscribe(new CompletableObserver() {
                     @Override
                     public void onSubscribe(@io.reactivex.annotations.NonNull Disposable d) {
-
+                        disposable.add(d);
                     }
 
                     @Override
@@ -55,11 +57,12 @@ public class NoteViewModel extends AndroidViewModel {
                 });
 
     }
-    public void deleteNode(NoteEntities noteEntities){
+
+    public void deleteNode(NoteEntities noteEntities) {
         noteDao.deleteNote(noteEntities).subscribeOn(Schedulers.computation()).subscribe(new CompletableObserver() {
             @Override
             public void onSubscribe(@io.reactivex.annotations.NonNull Disposable d) {
-
+                disposable.add(d);
             }
 
             @Override
@@ -70,18 +73,18 @@ public class NoteViewModel extends AndroidViewModel {
 
             @Override
             public void onError(@io.reactivex.annotations.NonNull Throwable e) {
-                Log.d("MY NOTES", "onError "+e.getMessage());
+                Log.d("MY NOTES", "onError " + e.getMessage());
             }
         });
     }
 
     public void getAllData() {
-       noteDao.getAllData()
+        noteDao.getAllData()
                 .subscribeOn(Schedulers.computation())
                 .subscribe(new SingleObserver<List<NoteEntities>>() {
                     @Override
                     public void onSubscribe(@io.reactivex.annotations.NonNull Disposable d) {
-
+                        disposable.add(d);
                     }
 
                     @Override
@@ -89,15 +92,15 @@ public class NoteViewModel extends AndroidViewModel {
 
                         liveDataNode.postValue(noteEntities);
 
-                        if ((noteEntities !=null && noteEntities.size()>0)){
-                            Log.d("MY NOTES", "onSuccess: "+noteEntities.get(0).getTitle());
+                        if ((noteEntities != null && noteEntities.size() > 0)) {
+                            Log.d("MY NOTES", "onSuccess: " + noteEntities.get(0).getTitle());
                         }
                     }
 
                     @Override
                     public void onError(@io.reactivex.annotations.NonNull Throwable e) {
 
-                        Log.d("MY NOTES", "onError: "+e.getMessage());
+                        Log.d("MY NOTES", "onError: " + e.getMessage());
                     }
                 });
 
@@ -107,6 +110,6 @@ public class NoteViewModel extends AndroidViewModel {
     @Override
     protected void onCleared() {
         super.onCleared();
-
+        disposable.clear();
     }
 }
